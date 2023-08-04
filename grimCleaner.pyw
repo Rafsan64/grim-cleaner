@@ -10,6 +10,12 @@ from pathlib import Path
 import datetime
 import tkinter as TK
 
+root = TK.Tk()
+root.title('Grim Cleaner v1.02.7')
+root.resizable(False, False)
+root.iconbitmap('rfs.ico')
+root.config(bg='black')
+
 homepath=Path.home()
 cwd=os.getcwd()
 config=ConfigParser()
@@ -129,7 +135,10 @@ prefetch=pathfolder("C:\\Windows\\Prefetch\\*","prefetch")
 
 
 menu=TK.Canvas()
+
 menu.grid()
+
+
 text=TK.Label(menu, text="Remove all your temporary files in just one click and boost up your computer speed!\nMake sure you have saved and closed all workflows before running the program\n\n - You can change the settings in the setting.ini file.")
 text.grid(row=1,column=1)
 startbutton=TK.Button(menu, text="START", bg="blue", fg="white", command=start, width=10)
@@ -140,4 +149,6 @@ prompt=TK.Text(menu, width=60, height=15, state="disabled",bg="white",fg="blue")
 prompt.grid(row=4,column=1)
 close=TK.Button(menu, text="CLOSE", bg="red", fg="white", command=close, width=8)
 close.grid(row=5,column=1)
+
+
 menu.mainloop()
